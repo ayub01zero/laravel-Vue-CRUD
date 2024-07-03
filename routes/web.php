@@ -7,5 +7,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->name('dashboard');
 
-Route::view('/{any?}', 'dashboard') 
-    ->where('any', '.*'); 
+Route::post('login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store']); 
+Route::post('logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy']); 
+
+Route::view('/{any?}', 'dashboard')
+    ->where('any', '.*');

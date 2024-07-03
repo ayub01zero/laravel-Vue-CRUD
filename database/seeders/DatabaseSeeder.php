@@ -23,5 +23,11 @@ class DatabaseSeeder extends Seeder
         $this->call([CateegorySeeder::class]);
         $this->call([PostSeeder::class]);
 
+        $this->call([
+            PermissionSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
+        ]);
+
     }
 }
